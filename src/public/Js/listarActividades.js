@@ -4,7 +4,38 @@ listar.addEventListener("click", () => {
     let listado  = document.getElementById("listado");
     
     if(listado.childElementCount <= 0) {
-        mostrarActividades();
+        // Lista las actividades en el lateral
+        mostrarActividades()
+
+        // Una vez listados se le aplicara listeners a los elementos
+        .then(() => {
+            listado.childNodes.forEach(element => {
+                // Cambiara los estilos
+                element.addEventListener("mouseover", () => {
+                    element.style.cursor = "pointer"
+                    element.style.color = "#fffa65";
+                });
+                
+                element.addEventListener("mouseout",  () => {
+                    element.style.color = "#fff";
+                });
+
+                // Pintara los datos del elemento en la tabla
+                element.addEventListener("click", () => {
+                    fetch(`/actividades/${element.textContent}`, {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify({actividad: element.textContent})
+                    })
+                    .then((data) => {
+                        return data.json()
+                    })
+                    .then((json) => {
+                        console.log(json)
+                    })
+                });
+            });
+        });
     };
 
     // Iterar sobre los elementos agregados

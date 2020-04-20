@@ -82,6 +82,7 @@
 
 #contenido-principal #tabla {
   display: none;
+  /* Sacar cuando termine */
   color: #fff;
   text-align: center;
 }

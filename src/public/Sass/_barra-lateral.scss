@@ -1,0 +1,73 @@
+#barra-lateral {
+    color: #fff;
+    width: 20%;
+    padding: 10px;
+    background-color: #4b4b4b;
+
+    height: 100%;
+    width: 5%;
+    position: fixed;
+    z-index: 1; /* Stay on top */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+
+    #closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+
+        &:hover {
+            cursor: pointer;
+            color: #fffa65;
+        }
+    }
+
+    div {
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #titulo-cambiar {
+        @include espaciado(5px, 10px);
+        margin-top: 20px;
+        display: none;
+    }
+    
+    #actividad-elegida {
+        @include espaciado(5px, 5px);
+        display: none;
+        width: 50%;
+    }
+    
+    #cambiar-actividad {
+        @include espaciado(5px, 10px);
+        display: none;
+        width: 50%;
+        
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    #listado {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #listar {
+            @include espaciado(10px, 10px);
+            display: none;
+    
+            &:hover {
+                cursor: pointer;
+                color: #fffa65;
+            }
+        }
+    }
+    
+}

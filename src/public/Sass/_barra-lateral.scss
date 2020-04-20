@@ -52,22 +52,22 @@
             cursor: pointer;
         }
     }
+    
+    #listar {
+        @include espaciado(10px, 10px);
+        display: none;
 
+        &:hover {
+            cursor: pointer;
+            color: #fffa65;
+        }
+    }
+    
     #listado {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        #listar {
-            @include espaciado(10px, 10px);
-            display: none;
-    
-            &:hover {
-                cursor: pointer;
-                color: #fffa65;
-            }
-        }
     }
     
 }

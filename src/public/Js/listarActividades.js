@@ -45,6 +45,7 @@ listar.addEventListener("click", () => {
                     .then((json) => {
                         const { data } = json;
                         imprimirDatos(element.textContent, data);
+                        tiempoTotal();
                     });
                 });
             });
@@ -91,3 +92,23 @@ function imprimirDatos(title, data) {
         `
     });
 };
+
+function tiempoTotal() {
+    let tiempo = document.getElementsByClassName("tiempo");
+    let tiempoTotal = document.getElementById("tiempo-total");
+
+    let horas = 0;
+    let minutos = 0;
+    let segundos = 0;
+    
+    for(let i = 0; i < tiempo.length; i++) {
+        let arr = tiempo[i].textContent.split(":");
+        horas += parseInt(arr[0]);
+        minutos += parseInt(arr[1]);
+        segundos += parseInt(arr[2]);
+    };
+
+    const arrTiempo = [horas, minutos, segundos];
+    let total = arrTiempo.join(":")
+    tiempoTotal.textContent = total;
+}

@@ -8,7 +8,10 @@
     <title>Actividades Cronometradas</title>
 </head>
 <body>
+    <!-- Contenedor de del lateral y el principal -->
     <main id="contenedor">
+
+        <!-- Lateral -->
         <aside id="barra-lateral">
            <h1 id="closebtn">X</h1>
            <h2 id="titulo-cambiar">Cambiar Actividad</h2>
@@ -22,13 +25,17 @@
             <div id="listado"></div>
         </aside>
         
+        <!-- Principal -->
         <section id="contenido-principal">
+
+            <!-- Cronometro -->
             <div id="cronometro">
                 <h1 id="titulo-actividad">Actividad</h1>
                 <h1 id="tiempo">00:00:00</h1>
                 <h2 id="iniciar-parar">Iniciar</h2>
             </div>
 
+            <!-- Tabla -->
             <div id="tabla">
                 <table>
                     <thead>
@@ -43,9 +50,11 @@
                             <td>Año</td>
                         </tr>
                     </thead>
+
                     <tbody id="cuerpo-tabla">
                         
                     </tbody>
+
                     <tfoot>
                         <tr>
                             <td>Total</td>
@@ -55,6 +64,7 @@
                 </table>
             </div>
         </section>
+        
     </main>
     <script src="Js/lateral.js"></script>
     <script src="Js/cronometro.js"></script>

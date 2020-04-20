@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
 // Muestra las tablas
 app.get("/actividades", (req, res) => {
     let sql = "SELECT name FROM sqlite_master WHERE type='table'";
+
     db.serialize(() => {
         db.all(sql, (err, table) => {
             if(err) console.log(err.message);
@@ -27,8 +28,16 @@ app.get("/actividades", (req, res) => {
 }); 
 
 // Muestra los datos de una tabla
-app.get("/actividades/:actividad", (req, res) => {
-    res.json({"message": "success"});
+app.post("/actividades/:actividad", (req, res) => {
+    let actividad = req.body.actividad;
+    let sql = `SELECT * FROM ${actividad}`;
+    let params = [];
+    
+    db.all(sql, params, (err, rows) => {
+        if(err) console.log(err.message);
+        
+        res.json({"message": "success", "data": rows});
+    });
 });
 
 // POST
@@ -47,8 +56,6 @@ app.post("/nueva-actividad", (req, res) => {
     db.run(sql, (err) => {
         if(err) console.log("Tabla ya creada");
     });
-
-    db.close();
 });
 
 app.post("/ingresar-datos", (req, res) => {
@@ -60,8 +67,6 @@ app.post("/ingresar-datos", (req, res) => {
             if(err) console.log(err.message);
         });
     });
-
-    db.close();
 });
 
 app.listen(port, () => {

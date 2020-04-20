@@ -66,7 +66,7 @@
     #listar {
         @include espaciado(10px, 10px);
         display: none;
-
+        
         &:hover {
             cursor: pointer;
             color: #fffa65;
@@ -78,6 +78,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
+        .actividades {
+            @include espaciado(5px, 5px);
+        }
     }
-    
 }

@@ -1,7 +1,8 @@
 #contenido-principal {
     @include flex(column, center, center);
     width: 100%;
-
+    transition: "0.5s";
+    
     #cronometro {
         @include flex(column, center, center);
         

@@ -33,6 +33,8 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  -webkit-transition: "0.5s";
+  transition: "0.5s";
 }
 
 #contenido-principal #cronometro {
@@ -209,5 +211,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#barra-lateral #listado .actividades {
+  margin: 5px;
+  padding: 5px;
 }
 /*# sourceMappingURL=styles.css.map */

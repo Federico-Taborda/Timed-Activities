@@ -62,7 +62,7 @@ async function mostrarActividades() {
     json.tables.map((element, index) => {
         if(index > 0) {
             let listado = document.getElementById("listado");
-            listado.innerHTML += `<h2>${element.name}</h2>`;
+            listado.innerHTML += `<h2 class="actividades">${element.name}</h2>`;
         };
     });
 };

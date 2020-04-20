@@ -1,4 +1,18 @@
+let mostrarCronometro = document.getElementById("mostrar-cronometro");
 let listar  = document.getElementById("listar");
+
+mostrarCronometro.addEventListener("click", () => {
+    let crono = document.getElementById("cronometro");
+    let table = document.getElementById("tabla");
+
+    if(crono.style.display == "initial") {
+        return false;
+    }else {
+        crono.style.display = "initial";
+        crono.style.display = "flex";
+        table.style.display = "none";
+    };
+});
 
 listar.addEventListener("click", () => {
     let listado  = document.getElementById("listado");

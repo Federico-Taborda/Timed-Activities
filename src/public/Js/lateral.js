@@ -22,6 +22,7 @@ function openNav() {
     document.getElementById("titulo-cambiar").style.display = "initial";
     document.getElementById("listar").style.display = "initial";
     document.getElementById("listado").style.display = "initial";
+    document.getElementById("mostrar-cronometro").style.display = "initial";
 };
 
 // Cierra la barra lateral
@@ -33,5 +34,6 @@ function closeNav() {
     document.getElementById("titulo-cambiar").style.display = "none";
     document.getElementById("listar").style.display = "none";
     document.getElementById("listado").style.display = "none";
+    document.getElementById("mostrar-cronometro").style.display = "none";
 };
 

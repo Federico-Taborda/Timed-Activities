@@ -80,6 +80,33 @@
   cursor: pointer;
 }
 
+#contenido-principal #tabla {
+  display: none;
+  color: #fff;
+  text-align: center;
+}
+
+#contenido-principal #tabla thead tr #titulo-tabla {
+  padding: 20px;
+  font-size: 3em;
+  border-bottom: 2px solid #000;
+}
+
+#contenido-principal #tabla thead tr td {
+  font-size: 2em;
+  padding: 5px;
+}
+
+#contenido-principal #tabla tbody tr td {
+  font-size: 1.5em;
+  padding: 5px;
+}
+
+#contenido-principal #tabla tfoot tr td {
+  font-size: 1.5em;
+  padding: 5px;
+}
+
 #barra-lateral {
   color: #fff;
   width: 20%;

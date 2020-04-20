@@ -1,9 +1,10 @@
 #contenido-principal {
     @include flex(column, center, center);
     width: 100%;
-    
+
     #cronometro {
         @include flex(column, center, center);
+        
         color: #fff;
         width: 100%;
         padding: 20px;
@@ -27,6 +28,44 @@
             
             &:hover {
                 cursor: pointer;
+            }
+        }
+    }
+
+    #tabla {
+        display: none;
+        color: #fff;
+        text-align: center;
+        thead {
+            tr {
+                #titulo-tabla {
+                    padding: 20px;
+                    font-size: 3em;
+                    border-bottom: 2px solid #000;
+                }
+                
+                td {
+                    font-size: 2em;
+                    padding: 5px;
+                }
+            }
+        }
+        
+        tbody {
+            tr {
+                td {
+                    font-size: 1.5em;
+                    padding: 5px;
+                }
+            }
+        }
+        
+        tfoot {
+            tr {
+                td {
+                    font-size: 1.5em;
+                    padding: 5px;            
+                }
             }
         }
     }

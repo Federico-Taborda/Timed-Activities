@@ -27,12 +27,32 @@ listar.addEventListener("click", () => {
                         headers: {"Content-Type": "application/json"},
                         body: JSON.stringify({actividad: element.textContent})
                     })
-                    .then((data) => {
-                        return data.json()
-                    })
+                    .then((data) => data.json())
                     .then((json) => {
-                        console.log(json)
-                    })
+                        const { data } = json;
+
+                        let cronometro = document.getElementById("cronometro");
+                        let tabla = document.getElementById("tabla");
+                        let tituloTabla = document.getElementById("titulo-tabla");
+                        let contenidoTabla = document.getElementById("cuerpo-tabla");
+                        
+                        tituloTabla.innerHTML = element.textContent;
+                        contenidoTabla.innerHTML = "";
+                        cronometro.style.display = "none";
+                        tabla.style.display = "initial";
+
+                        data.forEach(data => {
+                            contenidoTabla.innerHTML += `
+                            <tr>
+                                <td class="tiempo">${data.tiempo}</td>
+                                <td class="hora">${data.hora}</td>
+                                <td class="dia">${data.dia}</td>
+                                <td class="mes">${data.mes}</td>
+                                <td class="año">${data.año}</td>
+                            </tr>
+                            `
+                        });
+                    });
                 });
             });
         });
